@@ -126,7 +126,7 @@
 * core thead count: 核心线程数
 * max pool size: 最大线程数
 * queue size: 队列的szie
-
+corePoolSize、maximumPoolSize， workQueue 
 ## 整体的数据流向
 * 配置初始化流程：
     * Application添加依赖
@@ -148,6 +148,8 @@
 ### Thread Pool在redis存储
 * RBucket存储单个Thread Pool的信息
 * RList 存储所有Thread Pool的信息
+* Key的样式: Enum.xxx_LIST_KEY + "_" + appname + "_" + poolName;
+
 ### 如何在application 1/application 2 中使用？
 * 通过applicaiton.yml,这一步主要是用来建立redis连接池的
 ```java
@@ -163,3 +165,10 @@ dynamic:
 * 不会中断正在执行的线程，而是会等待，处理完一个任务后，进行检查，如果超过就回收
 * 不建议调小，除非长期的(e.g. 3 months)都闲置
 * 减少监控的压力
+
+
+# 团队协作
+# 运维团队
+* Prometheus和Grafana的接入配置:公司一套统一的监控平台地址
+* Admin部署环境信息: 
+* Admin端需要的Redis registry连接信息: xxx.redis.cache.azure.net:6380
