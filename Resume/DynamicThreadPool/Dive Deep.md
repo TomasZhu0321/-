@@ -133,7 +133,7 @@ corePoolSize、maximumPoolSize， workQueue
     * 通过application.yml配置线程池参数和redis连接信息
     * starter组件读取配置并初始化
 * 数据上报流程：
-    * starter每30s向Redis上报一次线程池状态
+    * starter每(定时任务)30s向Redis上报一次线程池状态
     * Redis保存所有线程池信息
 * 配置更新流程：
     * Admin接收前端修改请求
