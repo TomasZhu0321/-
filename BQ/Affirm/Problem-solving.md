@@ -94,3 +94,53 @@ I approached this challenge systematically:
 ### Learn
 The importance of proactive communication and transparent trade-off discussions with stakeholders was a valuable lesson for my career development.
 
+
+# Innovative solution
+## Situation
+* Our company was expanding insurance services from Ontario and British Columbia to other Canadian provinces. The existing payment system had become a significant bottleneck due to its rigid architecture. The core problem was that all provincial payment calculations were handled through complex if-else statements in the code. Every time we needed to add support for a new province, we had to modify the core logic, which was risky and time-consuming.
+## Task
+* As the lead developer on this project, I was responsible for redesigning the payment system to make it more flexible and maintainable. My goal was to create a solution that would allow us to easily add new provinces without touching existing code.
+## Action:
+* I proposed an innovative solution using the Strategy Pattern, which was quite different from our traditional approach. Here's how I implemented it:
+1. First, I designed a clean strategy interface that standardized how provincial payment calculations would be handled.
+2. Then, I created separate strategy classes for each province, encapsulating their specific calculation logic. This was innovative for our team because it completely changed how we handled provincial variations.
+3. I implemented a strategy factory to manage these different provincial implementations, making it easy to add new provinces without modifying existing code.
+4. To ensure a safe transition, I took an incremental approach:
+* Started with comprehensive unit tests to establish a baseline
+* Migrated one province at a time
+* Validated each step before moving forward
+## Result 
+This innovative approach delivered significant improvements:
+* We reduced the time needed to add a new province from one week to just 2-3 days - a 50% efficiency gain.
+* Our code quality metrics improved dramatically, with unit test coverage reaching 95%.
+* Most importantly, we could now add support for new provinces without touching the core payment logic, significantly reducing risk.
+
+## 追问
+### Why did you choose Strategy Pattern over other patterns?
+* It provided true runtime flexibility to switch between different provincial calculations
+* It achieved complete separation of concerns - each province's logic is isolated
+* It made unit testing significantly easier as we could test each strategy independently
+
+### How did you ensure the transition was safe
+* **Incremental approach**
+1. Started with Ontario as our pilot province:
+```java
+// First implemented the Ontario strategy
+public class OntarioPaymentStrategy implements PaymentStrategy {
+    @Override
+    public double calculate(Payment payment) {
+        // Ontario-specific calculation logic
+    }
+}
+
+// Wrote JUnit tests to verify the new implementation
+@Test
+public void testOntarioPaymentCalculation() {
+    OntarioPaymentStrategy strategy = new OntarioPaymentStrategy();
+    Payment payment = new Payment(1000, "Ontario");
+    double result = strategy.calculate(payment);
+    assertEquals(1130.0, result);
+}
+```
+2. After validating Ontario's success, I repeated the same process for BC and Manitoba
+
