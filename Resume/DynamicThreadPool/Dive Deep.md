@@ -1,5 +1,6 @@
 # Dynamic Thread Pool
 • Developed a dynamic thread pool with real-time adjustments using Java and Spring Boot. Utilized Redis as a registry and integrated Prometheus and Grafana for monitoring, significantly boosting multithreaded processing efficiency and reliability
+![image](./img/架构图.png)
 # 押题
 ## 1. Metrics
 * 这个Dynamic Thread Pool的Metrics有哪些？（根据哪些metrics来进行动态调整的？）
