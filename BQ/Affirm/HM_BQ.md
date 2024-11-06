@@ -75,7 +75,7 @@ Maintaining strict security standards
 
 ## 🪐 The type of work culture that gets you excited./ What kind of company are you interested in?
 
-## 🪐How would you prioritized your tasks at work?/ Handling different deadlines
+## 🪐 How would you prioritized your tasks at work?/ Handling different deadlines
 
 ## 🪐What are your most important skills?
 
