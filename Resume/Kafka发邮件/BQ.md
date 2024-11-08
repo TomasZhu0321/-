@@ -8,18 +8,17 @@
 * 日均订单量5000+
 * 营销推送邮件峰值可达数万封
 * 初期直接发送邮件导致频繁失败
-* 用户反馈邮件延迟，收件不稳定
+* 用户反馈邮件延迟，收件不稳定 
+
+Email Service Bottleneck: System encounters frequent **Throttle exceptions** and **delivery failures** due to SMTP rate limits (30 emails/minute) conflicting with high-volume business email needs including order confirmations, shipping updates, and marketing campaigns. 
+
 # Task (任务)
 ## 系统设计职责：
 * 设计高可用的分布式邮件发送系统
 * 解决SMTP服务器限流问题
-* 确保邮件可靠送达
-* 提供完整的监控方案
-## 具体目标：
-* 提升邮件送达率至99%以上
-* 控制发送延迟在秒级
-* 支持系统水平扩展
-* 实现自动化运维
+* 确保邮件可靠送达 
+Design a **high-availability distributed email system** with  queue management to handle **SMTP rate limits** and ensure **reliable message delivery** through multiple servers and **automatic retry mechanisms**.
+
 # Action (行动)
 ## 架构设计：
 * 采用分布式架构：3个应用服务器 + 3个SMTP服务器
@@ -33,23 +32,19 @@
 * 邮件发送：JavaMailSender
 * 监控：SpringBoot Actuator
 ## 核心功能实现：
-### 设计指数退避重试策略：
-* 首次重试等待1秒
+### 设计指数退避重试策略： （Exponential Backoff Retry Strategy）5 times
+* 首次重试等待1秒 progressive delays starting at 1 second, then increasing exponentially (2^n seconds) for subsequent retries 1s → 2s → 4s → 8s → 16s
 * 之后按2^n递增
-* 添加随机抖动避免惊群效应
-### 异常处理机制：
-* 区分可重试和不可重试错误
-* 可重试错误自动进入重试队列
+### 异常处理机制：（Exception Handling Mechanism）
+* 可重试错误自动进入重试队列 
 * 超过重试限制进入死信队列
 ## 监控告警：
 * 接入公司告警系统
-* 监控关键指标（发送成功率、延迟等）
 * 死信队列积压告警
 # Result (结果)
 ## 系统性能：
-* 成功处理日均5000+订单邮件
-* 支持突发流量（营销推送）
-* 邮件送达率提升到99.9%
+* 成功处理日均5000+订单邮件， 邮件送达率提升到99.9%， Throttle异常减少95% 
+* Successfully handled 5,000+ **daily order emails** with 99.9% delivery rate and 95% reduction in throttle exceptions.
 ## 业务价值：
 * 减少了90%的邮件发送失败率
 * 通过重试机制确保了重要邮件的送达

@@ -8,7 +8,6 @@
 ## 为什么需要这个项目（业务价值）
 * 之前的业务线中, 每次修改线程池参数后需要重新发布==>系统不够灵活
 * 解决方案: 降低线程池修改的成本，将线程池的参数从代码中迁移到分布式配置中心,实现了线程池配置可动态配置和即时生效
-
 # Task
 ## 你在团队中的角色/具体负责哪些部分
 * 我独立开发设计了 Dynamic Thread Pool这个组件，实现corePoolSize、maximumPoolSize， workQueue的动态调整，并上传到Azure DevOps Artifacts上实现了跨团队复用
@@ -17,24 +16,24 @@
 # Actions
 ## 有哪些模块？
 ### Config模块
-- 所以Config模块确实是整个组件的入口点，负责：
+- 所以Config模块确实是整个组件的入口点(**entry point**)，负责：
 * Redis连接的建立(RedissonClient)
-* 线程池配置的初始化
-* 组件各个部分的协调和启动
-* 配置的自动装配
+* 线程池配置的初始化 (Initializing thread pool configurations)
+* 组件各个部分的协调和启动 (Coordinating and starting different parts of the component)
+* 配置的自动装配 (Auto-configuration setup)
 ### Domain模块
-* 提供了线程池query和update
+* 提供了线程池query和update (query/update operations)
 ### Registry模块
-* 负责线程池配置信息在Redis中的存储和管理
+* 负责线程池配置信息在Redis中的存储和管理 (storage and management)
 ### Trigger模块
-* 定时任务，负责采集和上报线程池运行时数
-* 配置变更监听器，监听Redis的配置更新事件并触发线程池参数动态调整
+* 定时任务，负责采集和上报线程池运行时数 (Scheduled tasks, **collecting and reporting** thread pool runtime metrics)
+* 配置变更监听器，监听Redis的配置更新事件并触发线程池参数动态调整 (Configuration change listener, monitoring Redis configuration update events and triggering dynamic **adjustments** of thread pool parameters)
 ## 技术设计和决策
-### 为什么不自动扩容？
-* 保险业务通常比较稳定，日常claims处理量可预测
-* 突发情况通常有预警，在开学季会提前扩容（7-9）
-* 降低系统复杂度
-* 减少运维负担
+### 为什么不自动扩容？(automatic scaling?)
+* 保险业务通常比较稳定，日常claims处理量可预测 (stable, with predictable daily claims processing volume)
+* 突发情况通常有预警，在开学季会提前扩容（7-9）(**Sudden spikes** usually come with advance warning,school season)
+* 降低系统复杂度 (Reduces system complexity)
+* 减少运维负担 (Decreases **operational maintenance** burden)
 ## 实现过程中遇到的挑战和解决方案
 ### 需要确定到底监控的指标是什么，需要理解线程池的核心参数
 * active count: 活跃线程数
@@ -44,18 +43,18 @@
 * reject count: 拒绝任务数
 * execute time: 执行时间
 ### 如果设置的core thread数量小于当前 active的thread count会怎样？
-* 不会中断正在执行的线程，而是会等待，处理完一个任务后，进行检查，如果超过就回收
-* 不建议调小，除非长期的(e.g. 3 months)都闲置，减少监控的压力
+* 不会中断正在执行的线程，而是会等待，处理完一个任务后，进行检查，如果超过就回收 (Does not interrupt currently executing threads, but rather waits and checks after each task completion, recycling if exceeding the limit)
+* 不建议调小，除非长期的(e.g. 3 months)都闲置，减少监控的压力 (Downsizing is not recommended unless there has been long-term **idle capacity** (e.g., 3 months), to reduce monitoring pressure)
 ## 跨团队协作的细节
 ### 运维团队
-* Prometheus和Grafana的接入配置:公司一套统一的监控平台地址
-* Admin部署环境信息: 
-* Admin端需要的Redis registry连接信息: xxx.redis.cache.azure.net:6380
+* Prometheus和Grafana的接入配置:公司一套统一的监控平台地址 （Company's unified monitoring platform address）
+* Admin部署环境信息: (Admin deployment environment information)
+* Admin端需要的Redis registry连接信息: xxx.redis.cache.azure.net:6380 (Redis registry connection information required for Admin side: xxx.redis.cache.azure.net:6380)
 ### 开发团队
 * 告警系统的比例设置
-    * 活跃度报警: active/poolSize > 0.8
-    * 拒绝率报警: > 5%
-    * 队列使用率: queueSize / queueCapacity > 0.8
+    * 活跃度报警: active/poolSize > 0.8 (Thread pool **utilization rate**)
+    * 拒绝率报警: > 5%   
+    * 队列使用率: queueSize / queueCapacity > 0.8 
 * 写了详细的开发文档，上传到公司的Confluence中，提供了详细的组件使用手册
 
 # Result
@@ -136,7 +135,6 @@
 3. Registry模块（配置中心）
    * Redis数据存储
    * 配置信息管理
-   * 版本控制和回滚
 
 4. Trigger模块（监控触发）
    * 数据采集定时任务

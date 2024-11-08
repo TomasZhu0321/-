@@ -3,7 +3,7 @@
 ## Situation
 
 ### 项目背景
-* 业务需求
+* 业务需求 (role-based access control,different permissions, -- Enterprise Users,Administrators,Individual Users)
   * 多角色用户系统：企业用户和个人用户
   * 差异化保险定价展示
   * 定制化页面权限控制
@@ -29,7 +29,7 @@
 1. AuthenticationService
 * 职责：用户认证服务
 * 核心功能：
-  * 接收登录请求(username + password)
+  * 接收登录请求(username + password) (encrypt/decrypt)
   * 验证用户凭证
   * 获取用户角色和权限
   * 生成JWT令牌
@@ -43,20 +43,20 @@
   * 输入：
     * 用户名
     * 权限列表
-    * 用户其他信息
+    * 用户其他信息 
   * 处理：
-    * 创建JWT payload
-    * 设置过期时间
-    * 使用密钥签名
+    * 创建JWT payload 
+    * 设置过期时间 (expire date)
+    * 使用密钥签名 (signature)
   * 输出：
-    * JWT token字符串
+    * JWT token字符串 
 
 * Token验证：
   * 输入：JWT token
   * 处理：
     * 验证签名
     * 检查过期时间
-    * 解析payload提取信息
+    * 解析payload提取信息 （Parsing）
   * 输出：
     * 成功：用户信息和权限
     * 失败：JWT相关异常
@@ -70,8 +70,9 @@
 * JwtTokenFilter
   * 从请求中提取token
   * 验证token有效性
-  * 设置认证信息到上下文
+  * 设置认证信息到上下文 [SecurityContextHolder]
 
+* security while maintaining usability and performance.
 ### RBAC权限控制
 * 角色设计
   * ROLE_ENTERPRISE：企业用户

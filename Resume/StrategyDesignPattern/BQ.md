@@ -45,3 +45,83 @@
 * 系统更容易扩展，支持快速接入新的省份
 * 提高了代码的可测试性，单元测试覆盖率提升到95%
 * 收获了设计模式实践和重构经验
+
+# Situation
+
+## Project Background and Pain Points
+* As our insurance business **expanded from** Ontario and British Columbia to other provinces, our payment system faced several challenges:
+  * **Hard-coded if-else structures** required core code modifications for each new province
+  * Tax rate calculation logic for different provinces was **tangled together**, making maintenance difficult and error-prone
+  * Violated the Open-Closed Principle, hindering system extensibility
+
+## Business Value
+* Company was rapidly expanding to new provinces, requiring a more flexible payment system
+* Need to reduce development and maintenance costs for new province integration
+* Improve code quality and reduce risks associated with modifications
+
+# Task
+
+## Your Role and Responsibilities
+* Led the payment system refactoring design and implementation
+* Independently implemented the Strategy Pattern and unit tests
+* Created **migration plans** and development documentation
+
+# Actions
+
+## Technical Design and Decisions
+
+### Why Strategy Pattern?
+* Provided excellent **extensibility**: adding new provinces only requires new strategy classes
+* Achieved separation of concerns: each province's calculation **logic maintained independently**
+* Enhanced testability: each strategy class can **be tested in isolation**
+
+## Implementation Details
+* Designed **strategy interface** defining unified calculation methods
+* Implemented **independent strategy classes** for each province
+* Created strategy factory to manage **creation and retrieval** of strategies
+
+## Challenges and Solutions
+
+### Challenge 1: How to refactor complex if-else structures without affecting existing business?
+Solutions:
+* First established **unit test** coverage to ensure baseline behavior before refactoring
+* **Gradually replaced** if-else logic using Strategy Pattern, implementing separate strategy classes for each province
+* Incremental refactoring: **started with one** province, **verified**, then migrated others
+* Used **strategy factory** to **centralize strategy creation and retrieval**
+
+### Challenge 2: How to resolve coupled exchange rate calculation logic?
+Solutions:
+* Defined unified strategy interface to standardize calculation methods
+* **Encapsulated** each province's calculation logic in separate strategy classes
+* Added comprehensive unit tests to ensure independence of province logic
+* Implemented clear error handling mechanisms for quick problem identification
+
+# Results
+* **Reduced new province integration time** improving efficiency by 50%
+* Significantly **reduced code maintenance costs** with clearer, more understandable code
+* Enhanced system **extensibility**, supporting **rapid integration** of new provinces
+* Improved code testability with unit test coverage increasing to 95%
+* Gained valuable experience in design pattern implementation and refactoring
+
+# Key Interview Tips
+1. Emphasize your role in:
+   * Problem identification
+   * Solution design
+   * Implementation leadership
+   * Quality assurance
+
+2. Quantify impacts:
+   * Time savings
+   * Efficiency improvements
+   * Code quality metrics
+
+3. Highlight technical decisions:
+   * Why Strategy Pattern
+   * Implementation approach
+   * Risk mitigation
+
+4. Show soft skills:
+   * Technical leadership
+   * Problem-solving
+   * Documentation
+   * Knowledge sharing
