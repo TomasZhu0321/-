@@ -25,27 +25,27 @@
         1. heavily rely on personal experience,required system redeployment ==> risky and time-consuming
         2. Different business scenarios: For I/O-intensive tasks like email services, we configured thread pools differently than CPU-intensive tasks like insurance calculations
 ### Task
-* **Initiative** : I proposed a solution to reduce the operational cost of thread pool management by migrating thread pool parameters from hardcoded values to a distributed configuration center. 
-* **Task**: My task was to implement this dynamic thread pool component that would enable real-time parameter adjustments without system redeployment while providing comprehensive monitoring capabilities.
+* **Initiative** : I proposed a solution to **reduce the operational cost of thread pool management** by **migrating** thread pool parameters from **hardcoded values** to a **distributed configuration center**. 
+* **Task**: My task was to implement this dynamic thread pool component that would enable **real-time parameter adjustments** without system redeployment while **providing comprehensive monitoring capabilities.**
 
 ### Action: 
 Focusing on three key areas:
 * Technical Implementation:
-    * Created a thread pool starter component that business services could easily integrate, implementing dynamic adjustment logic for corePoolSize, maximumPoolSize, and workQueue parameters
-    * Developed Redis integration for configuration storage and distribution using pub/sub channels
-    * Built a standalone admin platform for centralized management with web interfaces for real-time adjustments
+    * Created a thread pool starter component that business services could easily integrate, implementing dynamic adjustment logic for **corePoolSize, maximumPoolSize, and workQueue parameters**
+    * Developed **Redis integration** for **configuration storage** and **distribution using pub/sub channels**
+    * Built a standalone admin platform for **centralized management** with web interfaces for **real-time adjustments**
 * Cross-functional Collaboration:
     * Worked with the Operations team to:
-        * Integrate Prometheus monitoring
-        * Set up Grafana dashboards for visualization
+        * **Integrate** **Prometheus monitoring**
+        * Set up **Grafana dashboards** for visualization
         * Configure alert rules
     * Collaborated with development teams to:
-        * Define key metrics (active_count, maximumPoolSize, queue size, completed tasks)
-        * Establish alert thresholds (e.g., active/poolSize > 0.8)
-* Developed comprehensive technical documentation and user guides to help teams adopt the solution, and published them to Confluence.
+        * Define key metrics **(active_count, maximumPoolSize, queue size, completed tasks)**
+        * Establish **alert thresholds** (e.g., active/poolSize > 0.8)
+* Developed comprehensive technical **documentation** and user guides to help teams **adopt the solution**, and published them to Confluence.
 
 ### Result
-* Received positive feedback from team members about the component's reliability and ease of use"
+* Received positive feedback from team members about the component's **reliability** and **ease of use**"
 * Delivered a working component that was adopted by multiple insurance business lines (travel, truck, and children insurance)
 * Learned a great deal about thread pool management, Redis, and monitoring systems
 
@@ -103,3 +103,6 @@ Focusing on three key areas:
 # How do you deliver results with limited resources?
 
 # Walk me through a situation where you had to manage multiple competing priorities
+
+
+# Failure 的经历

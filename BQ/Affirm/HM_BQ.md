@@ -31,40 +31,40 @@
 Here's the structured English version for "Why Affirm":
 
 1. Passion for Fintech
-- Innovation vs Traditional Finance: "Fintech, driven by technology, directly connects users with services, significantly improving efficiency and reducing costs"
-- Industry Growth: "From payment innovation, consumer finance to blockchain applications, Fintech is reshaping financial services. It's a dynamic and innovative field with great potential"
+- Innovation vs Traditional Finance: "Fintech, driven by technology, **directly connects users with services**, significantly improving efficiency and reducing costs"
+- Industry Growth: "From payment innovation, consumer finance to blockchain applications, Fintech is reshaping financial services. **It's a dynamic and innovative field with great potential**"
 - Personal Interest: "I'm particularly drawn to how technological innovation solves traditional financial pain points"
 
 2. Affirm's Unique Value
-- Market Leadership: "As a leader in BNPL, Affirm demonstrates strong innovation capability, especially with its first-ever BNPL solution for eligible small businesses"
-- Social Impact: "I'm inspired by Affirm's mission to help consumers make smarter financial decisions"
+- Market Leadership: "As a leader in BNPL, Affirm demonstrates strong **innovation capability**, especially with its **first-ever BNPL solution for eligible small businesses**"
+- Social Impact: "I'm inspired by Affirm's mission to help consumers **make smarter financial decisions**"
 - Technical Challenges: "As a backend engineer, I'm excited about the technical challenges Affirm faces, such as:
-  * High-concurrency transaction processing
+  * **High-concurrency transaction processing**
   * Real-time risk control systems
   * Ensuring security and scalability"
 - Growth Opportunity: "Affirm is known for technical innovation, offering great learning opportunities"
 
 3. Cultural Fit
-- Innovation Culture: "Affirm's emphasis on innovation aligns perfectly with my passion for technical breakthroughs"
+- Innovation Culture: "Affirm's **emphasis on innovation** aligns perfectly with my passion for technical breakthroughs"
 - Diversity & Inclusion: "I'm particularly impressed by Affirm's commitment to inclusion, with multiple ERG groups supporting employees from different backgrounds. This inclusive culture enables everyone to reach their full potential"
 
 ### Answer
-"I'm particularly drawn to the Fintech industry because of how it's revolutionizing traditional finance. Unlike conventional services, Fintech leverages technology to directly connect users with services, dramatically improving efficiency. Through my research, I've seen exciting innovations across various sectors, which makes me firmly believe that Fintech represents a fundamental transformation in financial services.
+"I'm particularly drawn to the Fintech industry because of how it's **revolutionizing traditional finance**. Unlike conventional services, Fintech leverages technology to directly connect users with services, dramatically improving efficiency. Through my research, I've seen exciting innovations across various sectors, which makes me firmly believe that Fintech represents a fundamental transformation in financial services.
 [核心业务+使命] What particularly excites me is that Affirm stands at the forefront of this transformation. As a leader in BNPL, Affirm has demonstrated remarkable innovation, especially with its groundbreaking solution for small businesses. I deeply resonate with Affirm's mission of helping consumers make smarter financial decisions.
 [技术兴趣] As a backend engineer, I'm genuinely excited about the technical challenges here - building systems that can handle high-concurrency transactions while maintaining robust real-time risk control is exactly the kind of challenge I'm eager to take on.
-[文化契合] Finally, what truly sets Affirm apart is its corporate culture. I was particularly impressed by Affirm's strong commitment to inclusion, demonstrated through its various ERG groups, combined with its emphasis on innovation. This aligns perfectly with my own values and how I believe great products are built."
+[文化契合] Finally, what truly sets Affirm apart is its corporate culture. I was particularly impressed by Affirm's strong commitment to inclusion, demonstrated through its various ERG groups, combined with its emphasis on innovation. This aligns perfectly with my own values and **how I believe great products are built.**"
 
 ### Why Position?
-"As I mentioned, I'm genuinely passionate about Fintech's technical challenges, and this backend developer position particularly appeals to me for several reasons.
-[专业背景+经验] With nearly two years of backend development experience, I've had the opportunity to work on various critical components. I independently developed a dynamic thread pool component for optimizing system performance, implemented authentication and authorization systems, and built message processing systems using Kafka for email notifications. I've also worked extensively with Redis for caching to improve system response times.
-[技术兴趣+Affirm相关] What excites me about this position at Affirm is the opportunity to apply and expand these skills in a more complex financial context. Building high-performance, secure backend systems for financial transactions presents unique challenges in terms of:
+"As I mentioned, I'm genuinely passionate about **Fintech's technical challenges**, and this backend developer position particularly appeals to me for several reasons.
+[专业背景+经验] With nearly two years of backend development experience, I've had the opportunity to **work on various critical components**. I independently developed a dynamic thread pool component for optimizing system performance, implemented authentication and authorization systems, and built message processing systems using Kafka for email notifications. I've also worked extensively with Redis for caching to improve system response times.
+[技术兴趣+Affirm相关] What excites me about this position at Affirm is the opportunity to **apply and expand these skills** in a more **complex financial context**. Building high-performance, secure backend systems for financial transactions presents unique challenges in terms of:
 
-Ensuring transaction consistency and reliability
+Ensuring transaction **consistency and reliability**
 Implementing robust real-time risk control
 Scaling systems to handle high concurrency
 Maintaining strict security standards
 
-[成长期望] I'm eager to continue growing my backend expertise, particularly in dealing with large-scale financial systems. I believe Affirm's innovative technical environment and complex business scenarios would provide excellent opportunities for me to further develop my skills while contributing to meaningful projects."
+[成长期望] **I'm eager to continue growing my backend expertise**, **particularly in dealing with large-scale financial systems**. I believe Affirm's **innovative technical environment** and **complex business scenarios** would provide excellent opportunities for me to** further develop my skills while contributing to meaningful projects.**"
 ## 🪐 The most interesting/challenging work you have done up until now
 
 ## 🪐 Tell me about a project you'v worked on and what your role was.
@@ -72,11 +72,26 @@ Maintaining strict security standards
 ## 🪐 What is your biggest impact in current role?
 
 ## 🪐 What you want to try next?
+* Distributed Systems for Financial Applications
+  * Want to dive deeper into building highly scalable payment processing systems
+  * Plan to explore advanced database optimization for financial data
+* Financial systems are becoming increasingly complex and distributed
+* These skills are crucial for building reliable FinTech infrastructure
 
 ## 🪐 The type of work culture that gets you excited./ What kind of company are you interested in?
+*  combines technological innovation with inclusive values
+  * Environment that encourages experimentation with cutting-edge technologies
+  * Opportunity to work on challenging technical problems
+  * Strong emphasis on continuous learning and growth
+  * Data-driven decision making culture
+* Values diverse perspectives and backgrounds
+* Supports work-life balance
 
 ## 🪐 How would you prioritized your tasks at work?/ Handling different deadlines
 
-## 🪐What are your most important skills?
+## 🪐 What are your most important skills?
 
 ## 🪐 Explain Project , what challenges you faced in it
+
+## ownership
+## conflict
