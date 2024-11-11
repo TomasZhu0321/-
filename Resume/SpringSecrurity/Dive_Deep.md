@@ -1,5 +1,4 @@
-* Implemented Spring Security and JWT for secure account management, using RBAC to control access, displaying customized
-pages and dynamic insurance pricing based on user roles, offering personalized solutions for enterprise and individual users.
+* Implemented Spring Security and JWT for secure account management, using RBAC to control access, displaying customized pages and dynamic insurance pricing based on user roles, offering personalized solutions for enterprise and individual users.
 
 # 整体图
 ![image](./img/RBAC.png)

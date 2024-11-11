@@ -17,7 +17,7 @@
 ## Task
 
 ### 个人职责
-* 认证授权方案设计
+* 认证授权方案设计 
 * Spring Security配置
 * JWT集成实现
 * RBAC权限控制

@@ -78,7 +78,7 @@
 ## Implementation Details
 * Designed **strategy interface** defining unified calculation methods
 * Implemented **independent strategy classes** for each province
-* Created strategy factory to manage **creation and retrieval** of strategies
+* Created **strategy factory** to manage **creation and retrieval** of strategies
 
 ## Challenges and Solutions
 
